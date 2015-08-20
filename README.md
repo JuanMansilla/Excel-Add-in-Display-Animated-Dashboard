@@ -1,5 +1,5 @@
 # Excel-Add-in-Display-Animated-Dashboard
-This code sample demonstrates a task pane app that is displayed in Excel 2013 when the app is first started. The task pane contains a partially hidden menu along its left side. Moving the mouse over the dashboard causes the menu to be fully displayed. Each menu item also includes a button that is used to either insert the text from a text box into the worksheet or retrieve text from the worksheet and insert it into the text box.
+This code sample demonstrates a task pane add-in that is displayed in Excel 2013 when the add-in is first started. The task pane contains a partially hidden menu along its left side. Moving the mouse over the dashboard causes the menu to be fully displayed. Each menu item also includes a button that is used to either insert the text from a text box into the worksheet or retrieve text from the worksheet and insert it into the text box.
 
 Figure 1 shows the task pane with the partially displayed dashboard.
 
@@ -30,9 +30,9 @@ This sample requires:
 
 The sample app contains the following components:
 
-* The AnimatedDashboard project, which contains the AnimatedDashboard.xml manifest file. The XML manifest file of an app for Office enables you to declaratively describe how the app should be activated when you install and use it with Office documents and applications.
+* The AnimatedDashboard project, which contains the AnimatedDashboard.xml manifest file. The XML manifest file of an add-in for Office enables you to declaratively describe how the add-in should be activated when you install and use it with Office documents and applications.
 * The AnimatedDashboardWeb project, which contains multiple template files. However, the three files that have been developed as part of this sample solution include:
-* AnimatedDashboard.html (in the Pages folder). This file contains the HTML user interface that is displayed in the task pane when the app is started. The markup consists of a <div> element that contains a text box element that has an ID of selectedDataTxt. It also contains another <div> element that has the ID of dashboard that contains two buttons that have IDs of  setDataBtn and getDataBtn. The  setDataBtn button inserts text from the text box into the worksheet. The  getDataBtn button retrieves any selected text from the worksheet and inserts it into the text box.
+* AnimatedDashboard.html (in the Pages folder). This file contains the HTML user interface that is displayed in the task pane when the add-in is started. The markup consists of a <div> element that contains a text box element that has an ID of selectedDataTxt. It also contains another <div> element that has the ID of dashboard that contains two buttons that have IDs of  setDataBtn and getDataBtn. The  setDataBtn button inserts text from the text box into the worksheet. The  getDataBtn button retrieves any selected text from the worksheet and inserts it into the text box.
 * App.css (in the Styles folder). This cascading style sheet (CSS) contains the code that specifies the initial look of the dashboard and the elements each menu item contains as shown in the following code. Particularly notice the left: -92px setting that causes the dashboard to appear partially hidden on the left side of the task pane.
 
 ```CSS
@@ -74,7 +74,7 @@ width: 210px
 ``` 
  
 
-* AnimatedDashboard.js (in the Scripts folder). This script file contains code that runs when the task pane app is loaded. Specifically, the script consists of commands from the JavaScript JQuery libraries named jquery.easing.1.3.js and jquery-1.7.1.min.js. This startup script first attaches code to the hover event of the <div> element that has the ID dashboard that contains the menu items. The hover event takes two arguments that define what happens when you move the mouse over the menu and then what happens when you move the mouse off of the menu.
+* AnimatedDashboard.js (in the Scripts folder). This script file contains code that runs when the task pane add-in is loaded. Specifically, the script consists of commands from the JavaScript JQuery libraries named jquery.easing.1.3.js and jquery-1.9.1.min.js. This startup script first attaches code to the hover event of the <div> element that has the ID dashboard that contains the menu items. The hover event takes two arguments that define what happens when you move the mouse over the menu and then what happens when you move the mouse off of the menu.
 
 ```JavaScript 
 $('#dashboard').hover(
@@ -168,7 +168,7 @@ To run the sample, choose the F5 key. After the task pane is displayed in Excel 
 
 *Troubleshooting*
 
-If the app fails to install, ensure that the XML in your AnimatedDashboard.xml manifest file parses correctly. Also look for any errors in the JavaScript code that could keep the dashboard from being displayed. For example, you may have forgotten to end a statement with a semicolon, or you may have misspelled a method name or keyword. If the components in the task pane do not look as you think they should, check the CSS styles to ensure that you didn't forget a colon between the style and its value, or leave off a semicolon at the end of a style statement.
+If the add-in fails to install, ensure that the XML in your AnimatedDashboard.xml manifest file parses correctly. Also look for any errors in the JavaScript code that could keep the dashboard from being displayed. For example, you may have forgotten to end a statement with a semicolon, or you may have misspelled a method name or keyword. If the components in the task pane do not look as you think they should, check the CSS styles to ensure that you didn't forget a colon between the style and its value, or leave off a semicolon at the end of a style statement.
 
 *Change log*
 
